@@ -2,9 +2,13 @@
 <html>
   <head>
     <title>Changing HTML text and so-on</title>
-    <link rel="icon" href="assets/image1.png">
+    <link rel="icon"
+    href="https://www.image2url.com/r2/default/images/1776396157613-c0b89346-8ea3-4fab-a654-111a1253d778.png">
     <style>
-    
+      body{
+        background-color: black;
+      }
+      
       div{
         display: flex;
         justify-content: center;
@@ -13,6 +17,7 @@
       h1{
         text-align: center;
         margin-bottom: 3rem;
+        color: white;
       }
       
       .bulb_div{
@@ -34,7 +39,7 @@
   </head>
   <body>
     <p>
-      <h1>Changing HTML elements using Javascript!!</h1>
+      <h1  id="paragraph">Changing HTML elements using Javascript!!</h1>
     </p>
     <div>
       <img
@@ -45,19 +50,26 @@
       <button id="lightBulb" onclick="change()">Click to turn me on🤤</button>
     </div>
     <script>
+    // LIGHT TOGGLE //
       let Changed = true
       function change() {
         let light = document.getElementById('image')
         let but = document.getElementById('lightBulb')
-        
+        let bdy = document.body
         
         if (!Changed) {
           light.src='https://www.image2url.com/r2/default/images/1776396026210-767c2b72-5ccc-42a9-b8d7-9ca4d12f7e26.png'
           but.innerHTML="Click to turn me on🤤"
-          Changed = true
+          but.style.color="white";
+          document.getElementById('paragraph').style.color ="white";
+          bdy.style.backgroundColor = "black";
+          Changed = true;
         } else {
-          light.src='https://www.image2url.com/r2/default/images/1776396157613-c0b89346-8ea3-4fab-a654-111a1253d778.png'
-          but.innerHTML="Turn Me off, I'm done!!"
+          light.src='https://www.image2url.com/r2/default/images/1776396157613-c0b89346-8ea3-4fab-a654-111a1253d778.png';
+          bdy.style.backgroundColor ="white";
+          document.getElementById('paragraph').style.color ="black";
+          but.innerHTML="Turn Me off, I'm done!!";
+          but.style.color="black"
           Changed = false
         }
       }
